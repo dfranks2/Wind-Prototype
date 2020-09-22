@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+
+@media only screen and (max-width: 630px) {
+  .container {
+    background-color: $primary-color;
+    display: grid;
+    padding: 10px;
+    justify-content: space-between;
+    grid-template-columns: 25px 1fr 1fr;
+    grid-column-gap: 5px;
+    min-width: 440px;
+    transition-property: background-color;
+    transition-duration: 150ms;
+  }
+
+  .logo-section {
+    display: none;
+    transition-property: display;
+    transition-duration: 2s;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .container {
+    background-color: $primary-color;
+    display: grid;
+    padding: 10px;
+    justify-content: space-between;
+    grid-template-columns: 25px 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+  }
+}
+.user-section {
+  color: $accent-color;
+  justify-content: space-between;
+}
+
+.user-name {
+  color: $secondary-color;
+}
+
+.logo-section {
+  justify-self: center;
+  color: $secondary-color;
+}
+
+.options-section {
+  display: grid;
+  grid-template-columns: 1fr 25px;
+  grid-column-gap: 5px;
+  justify-items: end;
+  color: $accent-color;
+}

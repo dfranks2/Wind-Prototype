@@ -1,0 +1,119 @@
+@import '../../styles/variables';
+
+.wrapper {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+.container {
+  display: grid;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));;
+  grid-gap: 10px;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1025px) {
+  .row-label {
+    font-size: 1.3em;
+    font-weight: bold;
+    grid-row: 1 / 2;
+    align-self: center;
+    justify-self: center;
+    padding: 5px 0;
+
+    &-hcc {
+      grid-column: 1 / span 5;
+    }
+
+    &-foc {
+      grid-column: 1 / span 3;
+    }
+
+    &-quality {
+      grid-column: 1 / span 4
+    }
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: repeat(5, 55px);
+    grid-template-rows: 45px, 45px;
+    grid-column-gap: .3rem;
+    justify-self: center;
+    transition: 0.5s;
+
+    &-hcc {
+      grid-template-columns: repeat(5, 55px);
+    }
+
+    &-foc {
+      grid-template-columns: repeat(3, 55px);
+    }
+
+    &-quality {
+      grid-template-columns: repeat(4, 55px);
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .row-label-hcc, .row-label-foc, .row-label-quality {
+    font-size: 1.3em;
+    font-weight: bold;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .row {
+    display: grid;
+    grid-column-gap: .3rem;
+    width: 300px;
+
+    &-hcc {
+      grid-template-columns: 80px repeat(5, 55px);
+    }
+  
+    &-foc {
+      grid-template-columns: 80px repeat(3, 55px);
+    }
+  
+    &-quality {
+      grid-template-columns: 80px repeat(4, 55px);
+    }
+  }
+}
+
+.pill {
+  display: flex;
+  box-sizing: border-box;
+  border-radius: 15px;
+  height: 27px;
+  color: $primary-text-color;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.5s;
+
+  &-pending-addressed-percent {
+    background: $pill-pending-color;
+    border: 1px solid $pill-pending-border-color;
+  }
+
+  &-invalid {
+    background: $pill-invalid-color;
+    border: 1px solid $pill-invalid-border-color;
+  }
+
+  &-needed {
+    background: $pill-needed-color;
+    border: 1px solid $pill-needed-border-color;
+  }
+
+  &-addressed {
+    background: $pill-addressed-color;
+    border: 1px solid $pill-addressed-border-color;
+  }
+}
